@@ -6,7 +6,7 @@ on:
       tag:
         description: 'Release Tag'
         required: true        
-
+        
 jobs:
   build:
     runs-on: ubuntu-22.04
