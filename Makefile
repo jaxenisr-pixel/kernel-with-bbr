@@ -4,6 +4,7 @@ PATCHLEVEL = 14
 SUBLEVEL = 113
 EXTRAVERSION =
 NAME = Petit Gorille
+KERNELRELEASE = -יום-הדין
 
 # *DOCUMENTATION*
 # To see a list of typical targets execute "make help"
