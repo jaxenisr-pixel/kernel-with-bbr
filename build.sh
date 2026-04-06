@@ -1,6 +1,6 @@
 #!/bin/bash
 RDIR="$(pwd)"
-export KBUILD_BUILD_USER="@ravindu644"
+export KBUILD_BUILD_USER="-יום-הדין"
 export MODEL=$1
 
 #init ksu next
@@ -49,7 +49,7 @@ if [ -z "$BUILD_KERNEL_VERSION" ]; then
 fi
 
 #setting up localversion
-echo -e "CONFIG_LOCALVERSION_AUTO=n\nCONFIG_LOCALVERSION=\"-ravindu644-${BUILD_KERNEL_VERSION}\"\n" > "${RDIR}/arch/arm64/configs/version.config"
+echo -e "CONFIG_LOCALVERSION_AUTO=n\nCONFIG_LOCALVERSION=\"-יום-הדין\"\n" > "${RDIR}/arch/arm64/configs/version.config"
 
 #OEM variabls
 export ARCH=arm64
