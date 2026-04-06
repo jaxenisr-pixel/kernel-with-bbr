@@ -35,14 +35,12 @@ jobs:
       - name: Building Kernel
         run: |
             bash build.sh ${{ matrix.device }}
-
       - name: Upload kernel
         uses: actions/upload-artifact@v4
         with:
           name: "KernelSU-Next-${{ env.BUILD_KERNEL_VERSION }}-${{ matrix.device }}-stock-One-UI"
           path: |
             build/*.tar
-
   release:
     needs: build
     runs-on: ubuntu-latest
@@ -62,6 +60,6 @@ jobs:
           name: "KernelSU-Next-beyond-stock-One-UI-${{ github.event.inputs.tag }}"
           draft: false
           prerelease: false
-          token: ${{ secrets.GITHUB_TOKEN }}          
+          token: ${{ secrets.TOKEN }}          
           artifacts: "artifacts/**/*.tar"
           body: "Commit SHA: ${{ github.sha }}"
