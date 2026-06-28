@@ -6,7 +6,7 @@ on:
       tag:
         description: 'Release Tag'
         required: true        
-        
+
 jobs:
   build:
     runs-on: ubuntu-22.04
@@ -35,12 +35,14 @@ jobs:
       - name: Building Kernel
         run: |
             bash build.sh ${{ matrix.device }}
+
       - name: Upload kernel
         uses: actions/upload-artifact@v4
         with:
           name: "KernelSU-Next-${{ env.BUILD_KERNEL_VERSION }}-${{ matrix.device }}-stock-One-UI"
           path: |
             build/*.tar
+
   release:
     needs: build
     runs-on: ubuntu-latest
