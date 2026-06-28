@@ -22,6 +22,13 @@ jobs:
         with:
           fetch-depth: 1
 
+      # Dieser neue Schritt holt das Submodul und aktualisiert es auf das neueste KSU-Next Release
+      - name: Update KernelSU-Next Submodule to Stable
+        run: |
+          git submodule init
+          git config submodule.KernelSU-Next.url https://github.com/sidex15/KernelSU-Next
+          git submodule update --remote --merge KernelSU-Next
+
       - name: Set up build environment
         run: |
           sudo apt update -y  
